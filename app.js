@@ -1,11 +1,9 @@
-
-  // Initialize audio and variables
 let audioElement = new Audio('/songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
 let songItems = Array.from(document.getElementsByClassName('songItemPlay'));
 let masterSongName = document.getElementById('masterSongName');
-let currentAudio = null;
+
 let currentSongIndex = 0;
 
 // Song data
@@ -22,63 +20,72 @@ let songs = [
     { songName: "My heart", filePath: "/songs/10.mp3", coverPath: "cover/10.jpg" },
 ];
 
-// Handle play/pause from master control
+// Master play/pause control
 masterPlay.addEventListener('click', () => {
-    if (currentAudio) {
-        if (currentAudio.paused) {
-            currentAudio.play();
-            masterPlay.classList.remove('fa-play-circle');
-            masterPlay.classList.add('fa-pause-circle');
-        } else {
-            currentAudio.pause();
-            masterPlay.classList.remove('fa-pause-circle');
-            masterPlay.classList.add('fa-play-circle');
-        }
+    if (audioElement.paused || audioElement.currentTime <= 0) {
+        audioElement.play();
+        updatePlayIcons(currentSongIndex);
+    } else {
+        audioElement.pause();
+        resetPlayButtons();
+        masterPlay.classList.remove('fa-pause-circle');
+        masterPlay.classList.add('fa-play-circle');
     }
 });
 
-// Handle individual song play buttons
+// Handle individual song clicks
 songItems.forEach((element, i) => {
     element.addEventListener('click', () => {
-        if (currentAudio && !currentAudio.paused) {
-            currentAudio.pause();
-            resetPlayButtons();
+        if (currentSongIndex === i && !audioElement.paused) {
+            audioElement.pause();
+            element.classList.remove('fa-pause-circle');
+            element.classList.add('fa-play-circle');
+            masterPlay.classList.remove('fa-pause-circle');
+            masterPlay.classList.add('fa-play-circle');
+        } else {
+            currentSongIndex = i;
+            audioElement.src = songs[i].filePath;
+            masterSongName.innerText = songs[i].songName;
+            audioElement.currentTime = 0;
+            audioElement.play();
+            updatePlayIcons(i);
         }
-
-        currentSongIndex = i;
-        currentAudio = new Audio(songs[i].filePath);
-        masterSongName.innerText = songs[i].songName;
-        currentAudio.currentTime = 0;
-        currentAudio.play();
-
-        element.classList.remove('fa-play-circle');
-        element.classList.add('fa-pause-circle');
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
-
-        currentAudio.addEventListener('timeupdate', updateProgress);
     });
 });
 
 // Update progress bar
-const updateProgress = () => {
-    const progress = parseInt((currentAudio.currentTime / currentAudio.duration) * 100);
-    myProgressBar.value = progress;
-};
-
-// Sync progress bar with song
-myProgressBar.addEventListener('change', () => {
-    if (currentAudio) {
-        currentAudio.currentTime = (myProgressBar.value / 100) * currentAudio.duration;
-    }
+audioElement.addEventListener('timeupdate', () => {
+    const progress = parseInt((audioElement.currentTime / audioElement.duration) * 100);
+    myProgressBar.value = progress || 0;
 });
 
-// Reset play button icons
+// Seek in song
+myProgressBar.addEventListener('change', () => {
+    audioElement.currentTime = (myProgressBar.value / 100) * audioElement.duration;
+});
+
+// Reset all play buttons
 const resetPlayButtons = () => {
     songItems.forEach((element) => {
         element.classList.remove('fa-pause-circle');
         element.classList.add('fa-play-circle');
     });
 };
+
+// Update all icons on play
+const updatePlayIcons = (index) => {
+    resetPlayButtons();
+    songItems[index].classList.remove('fa-play-circle');
+    songItems[index].classList.add('fa-pause-circle');
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+};
+
+// Reset buttons on song end
+audioElement.addEventListener('ended', () => {
+    resetPlayButtons();
+    masterPlay.classList.remove('fa-pause-circle');
+    masterPlay.classList.add('fa-play-circle');
+});
 
 
