@@ -1,196 +1,176 @@
-/* importing two Google fonts */
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-body{
-    background-color: antiquewhite;
+
+body {
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
 }
 
-*{
-    margin: 0;
-    padding: 0;
+/* Navbar styles */
+nav {
+  font-family: 'Ubuntu', sans-serif;
 }
 
-nav{
-    font-family: 'Ubuntu', sans-serif;
-}
-
-nav ul{
-    display: flex;
-    align-items: center;
-    list-style-type: none;
-    height: 65px;
-    background-color: black;
-    color: white;
-}
-.brand img{
-    width: 44px;
-    padding: 0 8px;
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  height: 65px;
+  background-color: black;
+  color: white;
 }
 
 .brand {
-    display: flex;
-    align-items: center;
-    font-weight: bolder;
-    font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 1.3rem;
 }
 
-.container{
-    min-height: 72vh;
-    background-color: black;
-    color: white;
-   font-family: 'Varela Round', sans-serif;
-   display: flex;
-   margin: 23px auto;
-   width: 70%;
-   border-radius: 12px;
-   padding: 34px;
-   background-image: url('bg.jpg');
+.brand img {
+  width: 44px;
+  padding: 0 8px;
 }
 
-.bottom{
-    position: sticky;
-    bottom: 0;
-    height: 130px;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
+/* Main container */
+.container {
+  min-height: 72vh;
+  background-color: black;
+  color: white;
+  font-family: 'Varela Round', sans-serif;
+  display: flex;
+  margin: 23px auto;
+  width: 70%;
+  border-radius: 12px;
+  padding: 34px;
+  background-image: url('bg.jpg');
 }
 
-.icons{
-    margin-top: 14px; 
-}
-.icons i{
-    cursor: pointer;
-}
-
-#myProgressBar{
-    width: 80vw; 
-    cursor: pointer;
-}
-
-.songItemContainer{
-    margin-top: 74px;
+/* Bottom player bar */
+.bottom {
+  position: sticky;
+  bottom: 0;
+  height: 130px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.songItem{
-    height: 50px;
-    display: flex;
-    background-color: white;
-    
-    color: black;
-    margin: 12px 0;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 34px;
+.icons {
+  margin-top: 14px;
 }
 
-.songItem img{
-    width: 43px;
-    margin: 0 23px;
-    border-radius: 34px;
+.icons i,
+.timestamp i {
+  cursor: pointer;
 }
 
-.timestamp{
-    margin: 0 23px;
+#myProgressBar {
+  width: 80vw;
+  cursor: pointer;
 }
 
-.timestamp i{
-    cursor: pointer;
-}
-
-.songInfo{
-    position: absolute;
-    left: 10vw;
-    font-family: 'Varela Round', sans-serif;
-}
-
-.songInfo img{
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
+/* Song list styles */
+.songItemContainer {
+  margin-top: 74px;
 }
 
 /* Main container for each song */
 .songItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    background-color: #f8f8f8;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-  }
-  
-  .songItem:hover {
-    background-color: #f0f0f0;
-  }
-  
-  /* Styling for the song cover image */
-  .songItem img {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-right: 15px;
-  }
-  
-  /* Styling for the song name */
-  .songName {
-    font-size: 16px;
-    font-weight: 500;
-    flex-grow: 1;
-    color: #333;
-  }
-  
-  /* Play button and timestamp container */
-  .songlistplay {
-    display: flex;
-    align-items: center;
-  }
-  
-  /* Styling for the timestamp */
-  .timestamp {
-    font-size: 14px;
-    color: #888;
-    margin-right: 10px;
-  }
-  
-  /* Play/pause button styling */
-  .songItemPlay {
-    font-size: 24px;
-    color: #007bff;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .songItemPlay:hover {
-    color: #0056b3;
-  }
-  
-  /* Icon for play/pause buttons */
-  .songItemPlay.fa-play-circle::before {
-    content: "\f144"; /* FontAwesome play-circle icon */
-  }
-  
-  .songItemPlay.fa-pause-circle::before {
-    content: "\f28b"; /* FontAwesome pause-circle icon */
-  }
-  
-  /* Media queries for responsive design */
-  @media (max-width: 768px) {
-    .songName {
-      font-size: 14px;
-    }
-  
-    .songItem img {
-      width: 50px;
-      height: 50px;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f8f8f8;
+  color: black;
+  padding: 10px;
+  margin: 12px 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
-  
-    .songItemPlay {
-      font-size: 20px;
-    }
+
+.songItem:hover {
+  background-color: #f0f0f0;
+}
+
+/* Song image */
+.songItem img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0 23px;
+}
+
+/* Song name text */
+.songName {
+  font-size: 16px;
+  font-weight: 500;
+  flex-grow: 1;
+  color: #333;
+}
+
+/* Timestamp and play button group */
+.songlistplay {
+  display: flex;
+  align-items: center;
+}
+
+.timestamp {
+  font-size: 14px;
+  color: #888;
+  margin-right: 10px;
+}
+
+/* Play button */
+.songItemPlay {
+  font-size: 24px;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.songItemPlay:hover {
+  color: #0056b3;
+}
+
+.songItemPlay.fa-play-circle::before {
+  content: "\f144";
+}
+
+.songItemPlay.fa-pause-circle::before {
+  content: "\f28b";
+}
+
+/* Song Info section in the player */
+.songInfo {
+  position: absolute;
+  left: 10vw;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.songInfo img {
+  opacity: 0;
+  transition: opacity 0.4s ease-in;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .songName {
+    font-size: 14px;
+  }
+
+  .songItem img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .songItemPlay {
+    font-size: 20px;
+  }
+}
