@@ -1,187 +1,165 @@
-<!-- This line specifies the document type as HTML -->
-<!DOCTYPE html>
 
-<!-- This line starts the HTML document and sets the default language to English -->
+ <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- This line specifies the character encoding used in the document -->
     <meta charset="UTF-8" />
-
-    <!-- This line specifies the compatibility mode for Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-    <!-- This line sets the viewport properties for responsive web design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- This line sets the title of the webpage that appears in the browser tab -->
     <title>Spotify - Your favourite music is here</title>
-
-    <!-- This line links the external CSS file to style the webpage -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- This line specifies the icon used in the browser tab -->
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
   </head>
 
   <body>
-    <!-- This code block defines the navigation bar of the webpage -->
     <nav>
       <ul>
-        <!-- This line defines the brand logo and text -->
-        <li class="brand"><img src="logo.png" alt="Spotify" /> Spotify</li>
+        <li class="brand"><img src="logo.png" alt="Spotify Logo" /> Spotify</li>
       </ul>
     </nav>
-    <!-- This code block defines the main content area of the webpage -->
+
     <div class="container">
       <div class="songList">
-        <!-- This line defines the title of the song list -->
         <h1>Best of NCS - No Copyright Sounds</h1>
-        <!-- This code block defines the list of songs and their details -->
         <div class="songItemContainer">
-            <div class="songItem">
-              <img src="cover/9.jpg" alt="Feel Good">
-              <span class="songName">Feel Good</span>
-              <span class="songlistplay">
-                <audio id="audioPlayer-1">
-                  <source src="/songs/1.mp3" type="audio/mpeg">
-                </audio>
-                <span class="timestamp">02:50</span>
-                <i id="1" class="far songItemPlay fa-play-circle"></i>
-              </span>
-            </div>
-          <div class="songItem">
-            <img src="cover/2.jpg" />
-            <span class="songName">Invincible</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="1" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <img  src="cover/3.jpg" />
-            <span class="songName">Mortals</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="2" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <img src="cover/4.jpg" />
-            <span class="songName">Shine</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="3" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <img src="cover/5.jpg" />
-            <span class="songName">Why We Lose </span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="4" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <img src="cover/6.jpg" />
-            <span class="songName">Sky High</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="5" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <img src="cover/7.jpg" />
-            <span class="songName">Symbolism</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="6" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <img src="cover/8.jpg" />
-            <span class="songName">Heroes Tonight</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="7" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
-          </div>
-          <div class="songItem">
-            <!-- Song Cover Image -->
-            <img src="cover/9.jpg" />
           
-            <!-- Song Name -->
+          <!-- Song 1 -->
+          <div class="songItem">
+            <img src="cover/1.jpg" alt="Feel Good" />
             <span class="songName">Feel Good</span>
-          
-            <!-- Song Audio and Play Icon -->
             <span class="songlistplay">
-              <!-- Audio element for this song -->
               <audio id="audioPlayer-1">
-                <source src="/songs/9.mp3" type="audio/mpeg">
+                <source src="/songs/1.mp3" type="audio/mpeg" />
               </audio>
-          
-              <!-- Timestamp and Play Button -->
-              <span class="timestamp">02:50
-                <!-- Play button with unique ID -->
-                <i id="1" class="far songItemPlay fa-play-circle"></i>
-              </span>
+              <span class="timestamp">02:50</span>
+              <i id="play-1" class="far songItemPlay fa-play-circle"></i>
             </span>
           </div>
+
+          <!-- Song 2 -->
           <div class="songItem">
-            <img src="cover/10.jpg" />
-            <span class="songName">My Heart</span>
-            <span class="songlistplay"
-              ><span class="timestamp"
-                >02:50
-                <i id="9" class="far songItemPlay fa-play-circle"></i> </span
-            ></span>
+            <img src="cover/2.jpg" alt="Invincible" />
+            <span class="songName">Invincible</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-2">
+                <source src="/songs/2.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-2" class="far songItemPlay fa-play-circle"></i>
+            </span>
           </div>
+
+          <!-- Song 3 -->
+          <div class="songItem">
+            <img src="cover/3.jpg" alt="Mortals" />
+            <span class="songName">Mortals</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-3">
+                <source src="/songs/3.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-3" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
+          <!-- Song 4 -->
+          <div class="songItem">
+            <img src="cover/4.jpg" alt="Shine" />
+            <span class="songName">Shine</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-4">
+                <source src="/songs/4.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-4" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
+          <!-- Song 5 -->
+          <div class="songItem">
+            <img src="cover/5.jpg" alt="Why We Lose" />
+            <span class="songName">Why We Lose</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-5">
+                <source src="/songs/5.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-5" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
+          <!-- Song 6 -->
+          <div class="songItem">
+            <img src="cover/6.jpg" alt="Sky High" />
+            <span class="songName">Sky High</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-6">
+                <source src="/songs/6.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-6" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
+          <!-- Song 7 -->
+          <div class="songItem">
+            <img src="cover/7.jpg" alt="Symbolism" />
+            <span class="songName">Symbolism</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-7">
+                <source src="/songs/7.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-7" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
+          <!-- Song 8 -->
+          <div class="songItem">
+            <img src="cover/8.jpg" alt="Heroes Tonight" />
+            <span class="songName">Heroes Tonight</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-8">
+                <source src="/songs/8.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-8" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
+          <!-- Song 9 -->
+          <div class="songItem">
+            <img src="cover/10.jpg" alt="My Heart" />
+            <span class="songName">My Heart</span>
+            <span class="songlistplay">
+              <audio id="audioPlayer-9">
+                <source src="/songs/9.mp3" type="audio/mpeg" />
+              </audio>
+              <span class="timestamp">02:50</span>
+              <i id="play-9" class="far songItemPlay fa-play-circle"></i>
+            </span>
+          </div>
+
         </div>
       </div>
       <div class="songBanner"></div>
     </div>
 
-    <!-- A bottom div for displaying song controls -->
+    <!-- Bottom Controls -->
     <div class="bottom">
-      <!-- A progress bar input element -->
-      <input
-        type="range"
-        name="range"
-        id="myProgressBar"
-        min="0"
-        value="0"
-        max="100"
-      />
-      <!-- A container div for fontawesome icons -->
+      <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100" />
       <div class="icons">
-        <!-- A fontawesome icon for previous song -->
         <i class="fas fa-3x fa-step-backward" id="previous"></i>
-        <!-- A fontawesome icon for playing/pausing the current song -->
         <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
-        <!-- A fontawesome icon for next song -->
         <i class="fas fa-3x fa-step-forward" id="next"></i>
       </div>
-      <!-- A div for displaying the current song information -->
       <div class="songInfo">
-        <!-- An image of a playing animation -->
-        <img src="playing.gif" width="42px" alt="" id="gif" />
-        <!-- The name of the currently playing song -->
-        <span id="masterSongName">On & On-Cartoon, Daniel Levi</span>
+        <img src="playing.gif" width="42px" alt="Playing animation" id="gif" />
+        <span id="masterSongName">On & On - Cartoon, Daniel Levi</span>
       </div>
     </div>
-    <!-- A script tag for including a JavaScript file -->
+
     <script src="app.js"></script>
-    <!-- A script tag for including the fontawesome icon library -->
-    <script
-      src="https://kit.fontawesome.com/26504e4a1f.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
   </body>
 </html>
